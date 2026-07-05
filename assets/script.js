@@ -74,10 +74,10 @@
             });
         });
 
-        // Control de Temas (Femenino / Masculino)
         const btnFemale = document.getElementById('btnFemale');
         const btnMale = document.getElementById('btnMale');
         const heroImg = document.querySelector('.hero-image img');
+        const heroLogo = document.getElementById('heroLogo');
 
         function setTheme(theme) {
             if (theme === 'female') {
@@ -92,6 +92,7 @@
                         heroImg.style.opacity = '1';
                     }, 200);
                 }
+                if (heroLogo) heroLogo.src = './assets/images/nura women.png';
                 localStorage.setItem('nura-theme', 'female');
             } else {
                 document.body.classList.remove('theme-female');
@@ -105,6 +106,7 @@
                         heroImg.style.opacity = '1';
                     }, 200);
                 }
+                if (heroLogo) heroLogo.src = './assets/images/nura men.png';
                 localStorage.setItem('nura-theme', 'male');
             }
         }

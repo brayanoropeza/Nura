@@ -1,4 +1,4 @@
-﻿
+
         @font-face {
             font-family: 'Montserrat';
             src: url('./assets/fonts/montserrat.woff2') format('woff2');
@@ -922,7 +922,7 @@
         }
 
         /* Responsive */
-        @media (max-width: 900px) {
+        @media (max-width: 1050px) {
             nav {
                 flex-wrap: wrap;
                 gap: 15px;
@@ -937,9 +937,6 @@
             .theme-btn {
                 flex: 1;
             }
-        }
-
-        @media (max-width: 768px) {
             .nav-links {
                 display: none;
                 position: absolute;
@@ -951,6 +948,7 @@
                 padding: 20px;
                 gap: 20px;
                 border-bottom: 1px solid var(--theme-primary);
+                z-index: 1001;
             }
 
             .nav-links.active {
