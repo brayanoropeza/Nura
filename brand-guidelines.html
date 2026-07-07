@@ -671,9 +671,36 @@
             }
         }
 
-        section {
-            animation: fadeIn 0.6s ease;
+        /* Estilos de Botón en Modal/Hero */
+        .btn-justificacion {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 40px;
+            background: transparent;
+            border: 2px solid var(--theme-primary);
+            color: var(--theme-primary);
+            font-size: 0.95rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 5px;
         }
+        .btn-justificacion:hover {
+            background: var(--theme-primary);
+            color: var(--nura-black);
+            box-shadow: 0 0 15px var(--theme-glow);
+        }
+
+        /* Modal Base CSS (similar al de style.css) */
+        .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); backdrop-filter: blur(5px); z-index: 9999; justify-content: center; align-items: center; }
+        .modal-overlay.active { display: flex; }
+        .modal-content { background: var(--nura-black); border: 1px solid var(--theme-primary); border-radius: 10px; max-width: 800px; width: 90%; max-height: 90vh; overflow-y: auto; padding: 40px; position: relative; box-shadow: 0 0 30px var(--theme-glow); }
+        .modal-close { position: absolute; top: 20px; right: 20px; background: transparent; border: none; color: var(--nura-gray); font-size: 1.5rem; cursor: pointer; transition: color 0.3s; }
+        .modal-close:hover { color: var(--theme-primary); }
+        .modal-content h3 { font-size: 1.8rem; color: var(--theme-primary); margin-bottom: 20px; font-weight: 300; }
+        .modal-content p { color: var(--nura-gray); margin-bottom: 15px; font-size: 1rem; line-height: 1.8; }
+        .modal-content ul { color: var(--nura-gray); margin-bottom: 15px; padding-left: 20px; line-height: 1.8; }
     </style>
 </head>
 <body>
@@ -703,6 +730,8 @@
         <h1>BRAND GUIDELINES</h1>
         <p>Manual de Identidad de Marca NÜRA</p>
         <div class="version">Versión 1.0 - 2026</div>
+        <br>
+        <button id="openJustificacion" class="btn-justificacion">Ver Justificación de Diseño</button>
     </section>
 
     <!-- Brand Heart -->
@@ -768,7 +797,7 @@
             <div class="logo-showcase">
                 <p style="color: var(--nura-gray); margin-bottom: 20px;">Logo Principal</p>
                 <div class="logo-main">NÜRA</div>
-                <p style="color: var(--nura-gold); font-size: 0.9rem; letter-spacing: 3px;">NATURAL • ÚNICO • RADIANTE</p>
+                <p style="color: var(--nura-white); font-size: 0.9rem; letter-spacing: 3px;">NATURAL • ÚNICO • RADIANTE</p>
             </div>
 
             <div class="logo-specs">
@@ -777,8 +806,7 @@
                     <ul>
                         <li>Tipografía: Playfair Display</li>
                         <li>Diéresis sobre la Ü (dualidad maya)</li>
-                        <li>Gota de aceite dorada en la U</li>
-                        <li>Color: Oro Antiguo (#D4AF37)</li>
+                        <li>Color: Blanco o Negro Mate (dependiendo del fondo)</li>
                         <li>Letter-spacing: +50</li>
                     </ul>
                 </div>
@@ -800,10 +828,8 @@
                 <div class="spec-box">
                     <h4>Versiones</h4>
                     <ul>
-                        <li>Dorado sobre negro (principal)</li>
-                        <li>Blanco sobre negro</li>
+                        <li>Blanco sobre negro (principal)</li>
                         <li>Negro sobre blanco</li>
-                        <li>Dorado sobre blanco</li>
                     </ul>
                 </div>
             </div>
@@ -830,18 +856,7 @@
                     </div>
                 </div>
 
-                <div class="color-card">
-                    <div class="color-preview" style="background: var(--nura-gold); color: var(--nura-black);">
-                        Dorado
-                    </div>
-                    <div class="color-info">
-                        <h4>NÜRA Gold</h4>
-                        <div class="color-code">HEX: #D4AF37</div>
-                        <div class="color-code">RGB: 212, 175, 55</div>
-                        <div class="color-code">CMYK: 20, 30, 85, 5</div>
-                        <div class="color-code">Pantone: 871 C</div>
-                    </div>
-                </div>
+
 
                 <div class="color-card">
                     <div class="color-preview" style="background: var(--nura-pink); color: var(--nura-white);">
@@ -898,15 +913,11 @@
                 <h4 style="color: var(--nura-gold); margin-bottom: 20px;">Proporción de Uso</h4>
                 <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 20px;">
                     <div style="flex: 1; min-width: 120px; text-align: center; padding: 20px; background: var(--nura-black); border-radius: 5px;">
-                        <div style="font-size: 2rem; color: var(--nura-gold); font-weight: bold;">60%</div>
+                        <div style="font-size: 2rem; color: var(--nura-white); font-weight: bold;">70%</div>
                         <div style="color: var(--nura-gray); font-size: 0.9rem;">Negro Mate</div>
                     </div>
-                    <div style="flex: 1; min-width: 120px; text-align: center; padding: 20px; background: var(--nura-gold); border-radius: 5px;">
-                        <div style="font-size: 2rem; color: var(--nura-black); font-weight: bold;">20%</div>
-                        <div style="color: var(--nura-black); font-size: 0.9rem;">Dorado</div>
-                    </div>
                     <div style="flex: 1; min-width: 120px; text-align: center; padding: 20px; background: var(--nura-white); border-radius: 5px;">
-                        <div style="font-size: 2rem; color: var(--nura-black); font-weight: bold;">10%</div>
+                        <div style="font-size: 2rem; color: var(--nura-black); font-weight: bold;">20%</div>
                         <div style="color: var(--nura-black); font-size: 0.9rem;">Blanco</div>
                     </div>
                     <div style="flex: 1; min-width: 120px; text-align: center; padding: 20px; background: var(--nura-pink); border-radius: 5px;">
@@ -931,19 +942,16 @@
             <div class="typography-showcase">
                 <div class="type-sample">
                     <h4>Playfair Display - Logo y Títulos</h4>
-                    <div class="sample" style="font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--nura-gold);">NÜRA</div>
+                    <div class="sample" style="font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--nura-white);">NÜRA</div>
                     <div class="sample" style="font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--nura-white);">Ixchel / Itzamná</div>
                     <div class="sample" style="font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--nura-gray);">Domina el caos. Radiante en segundos.</div>
                 </div>
 
                 <div class="type-sample">
                     <h4>Montserrat - Cuerpo de Texto</h4>
-                    <div class="sample" style="font-family: 'Montserrat', sans-serif; font-size: 1.2rem; font-weight: 600; color: var(--nura-white);">Serum Antifrizz de Emergencia</div>
+                    <div class="sample" style="font-family: 'Montserrat', sans-serif; font-size: 1.2rem; font-weight: 600; color: var(--nura-white);">Textos y descripciones</div>
                     <div class="sample" style="font-family: 'Montserrat', sans-serif; font-size: 1rem; color: var(--nura-gray);">
-                        15ml Aceite de Argán<br>
-                        10ml Aceite de Jojoba<br>
-                        4ml Aceite de Coco<br>
-                        1ml Vitamina E
+                        Esta tipografía se utiliza en todo el cuerpo de la página, menús y párrafos, aportando un estilo limpio, moderno y altamente legible que complementa la elegancia de los títulos.
                     </div>
                 </div>
             </div>
@@ -974,59 +982,6 @@
         </div>
     </section>
 
-    <!-- Elementos Gráficos -->
-    <section id="elementos">
-        <div class="container">
-            <h2 class="section-title">Elementos Gráficos</h2>
-            <p class="section-subtitle">Marco dorado, símbolos y glifos mayas</p>
-
-            <div class="graphics-grid">
-                <div class="graphic-item">
-                    <h4>Marco Dorado</h4>
-                    <ul>
-                        <li>Grosor: 2pt (línea delgada)</li>
-                        <li>Color: NÜRA Gold (#D4AF37)</li>
-                        <li>Distancia del borde: 5mm</li>
-                        <li>Esquinas: 90° perfectos</li>
-                        <li>Uso: Etiquetas de producto</li>
-                    </ul>
-                </div>
-
-                <div class="graphic-item">
-                    <h4>Símbolo Ixchel (Luna)</h4>
-                    <ul>
-                        <li>Luna creciente dorada</li>
-                        <li>Versión femenina (para mujeres)</li>
-                        <li>Fondo: Blanco / Elementos Rosa</li>
-                        <li>Marca de agua: Glifo circular (20% opacidad)</li>
-                        <li>Color: Dorado y Rosa Radiante</li>
-                    </ul>
-                </div>
-
-                <div class="graphic-item">
-                    <h4>Símbolo Itzamná (Sol-Jaguar)</h4>
-                    <ul>
-                        <li>Sol con rostro de jaguar</li>
-                        <li>Versión masculina (para hombres)</li>
-                        <li>Fondo: Negro / Elementos Azul</li>
-                        <li>Marca de agua: Glifos dispersos (15% opacidad)</li>
-                        <li>Color: Dorado y Azul Celestial</li>
-                    </ul>
-                </div>
-
-                <div class="graphic-item">
-                    <h4>Glifos Mayas</h4>
-                    <ul>
-                        <li>Opacidad: 15-25% máximo</li>
-                        <li>Color: Gris Maya o Dorado Suave</li>
-                        <li>Escala: Máximo 60% del elemento principal</li>
-                        <li>Uso: Marcas de agua sutiles</li>
-                        <li>No usar sobre textos importantes</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Empaque -->
     <section id="empaque">
@@ -1052,7 +1007,7 @@
                         </tr>
                         <tr>
                             <td>Capacidades</td>
-                            <td>15ml y 30ml</td>
+                            <td>40ml</td>
                         </tr>
                         <tr>
                             <td>Tapa</td>
@@ -1066,19 +1021,15 @@
                     <table>
                         <tr>
                             <td>Dimensiones</td>
-                            <td>45mm x 60mm (30ml)</td>
+                            <td>Adaptado a frasco 40ml</td>
                         </tr>
                         <tr>
                             <td>Material</td>
-                            <td>Papel premium mate o vinil</td>
+                            <td>Papel premium mate o vinil transparente</td>
                         </tr>
                         <tr>
-                            <td>Marco</td>
-                            <td>Dorado 2pt</td>
-                        </tr>
-                        <tr>
-                            <td>Símbolo</td>
-                            <td>25mm alto (dorado)</td>
+                            <td>Diseño</td>
+                            <td>Tipográfico minimalista sin símbolos</td>
                         </tr>
                         <tr>
                             <td>Tipografía</td>
@@ -1192,7 +1143,7 @@
 
                 <div class="dont-item">
                     <h4>❌ Colores Incorrectos</h4>
-                    <p>No usar colores neón o fuera de la paleta oficial. El dorado debe ser antiguo, no brillante.</p>
+                    <p>No usar colores neón o fuera de la paleta oficial (Negro, Blanco, Rosa, Azul). No usar dorados, plateados ni otros acentos metálicos.</p>
                 </div>
 
                 <div class="dont-item">
@@ -1241,6 +1192,27 @@
             <a href="index.html" style="color: var(--theme-primary); text-decoration: none; transition: color 0.5s ease;">← Volver al Sitio Principal</a>
         </p>
     </footer>
+
+    <!-- Modal de Justificación -->
+    <div id="justificacionModal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close" id="closeJustificacion">✖</button>
+            <h3>Justificación de Identidad y Diseño</h3>
+            <p><strong>1. Diferencia Tipográfica: Web (Playfair Display) vs Envase (Sans-Serif)</strong><br>
+            Mientras que el frasco del serum utiliza una tipografía minimalista y limpia sin remates (sans-serif) para resaltar la pureza del líquido y la naturaleza clínica de un producto "de emergencia", la identidad digital e impresa de la marca adopta la tipografía <strong>Playfair Display</strong> para sus logotipos y titulares. Esto se hace intencionalmente para inyectar elegancia, lujo clásico y un toque "premium" de botica fina en la comunicación de la marca. Esta dualidad permite que el producto físico se vea moderno y tecnológico, mientras que la marca mantiene su esencia ancestral, lujosa y solemne.</p>
+
+            <p><strong>2. ¿Por qué la ausencia de Glifos, Lunas, Jaguares o Marcos Dorados en el envase?</strong><br>
+            Tal y como dictan las especificaciones oficiales, el diseño del frasco es intencionalmente pulcro y minimalista. La inclusión de símbolos literales o colores metálicos como el dorado (marcos, acentos) distraería y "ensuciaría" el envase, haciéndolo parecer un producto místico o esotérico en lugar de un cosmético de alta gama. La dualidad (Ixchel e Itzamná) se representa sutilmente a través de los colores del serum (Rosa radiante y Azul celestial) que contrastan contra el envase de cristal transparente con tapa negra.</p>
+
+            <p><strong>3. Significado de los Colores:</strong></p>
+            <ul>
+                <li><strong>Rosa Radiante (Ixchel):</strong> Simboliza la feminidad, la calidez y el poder de sanación (renovación capilar). Contraste vibrante con el fondo oscuro y partículas brillantes.</li>
+                <li><strong>Azul Celestial (Itzamná):</strong> Representa el enfoque, la calma, la claridad mental y la estructura (protección del frizz). Fondo celestial estrellado.</li>
+                <li><strong>Negro Mate:</strong> Aplicado en la tapa del frasco y los fondos de la web, aporta elegancia, lujo, profundidad y misterio. Hace que el resto de los colores destaquen.</li>
+                <li><strong>Blanco:</strong> Usado para los textos y tipografía limpia en la etiqueta, enfatizando el aspecto "premium" y clínico sin llegar a recargar el diseño.</li>
+            </ul>
+        </div>
+    </div>
 
     <script>
         // Función de protección (Crash extremo)
@@ -1326,6 +1298,21 @@
         btnFemale.addEventListener('click', () => setTheme('female'));
         btnMale.addEventListener('click', () => setTheme('male'));
 
+        // Modal de Justificacion
+        const modal = document.getElementById('justificacionModal');
+        const openBtn = document.getElementById('openJustificacion');
+        const closeBtn = document.getElementById('closeJustificacion');
+
+        if(openBtn) {
+            openBtn.addEventListener('click', () => modal.classList.add('active'));
+        }
+        if(closeBtn) {
+            closeBtn.addEventListener('click', () => modal.classList.remove('active'));
+        }
+        modal.addEventListener('click', (e) => {
+            if(e.target === modal) modal.classList.remove('active');
+        });
+
         // Cargar tema inicial (local o por defecto 'female')
         const savedTheme = localStorage.getItem('nura-theme') || 'female';
         setTheme(savedTheme);
@@ -1351,6 +1338,7 @@
             el.style.transition = 'all 0.6s ease';
             observer.observe(el);
         });
+
     </script>
 
 </body>

@@ -6,6 +6,12 @@
             font-display: swap;
         }
         @font-face {
+            font-family: 'Montserrat';
+            src: url('./assets/fonts/montserrat.woff2') format('woff2');
+            font-weight: 300 700;
+            font-display: swap;
+        }
+        @font-face {
             font-family: 'Playfair Display';
             src: url('./assets/fonts/playfair.woff2') format('woff2');
             font-weight: 400 700;
@@ -657,6 +663,60 @@
             border-radius: 8px;
             padding: 30px;
             text-align: left;
+        }
+
+        /* Modal Justificacion */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.8);
+            backdrop-filter: blur(5px);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-overlay.active {
+            display: flex;
+        }
+        .modal-content {
+            background: var(--nura-black);
+            border: 1px solid var(--theme-primary);
+            border-radius: 10px;
+            max-width: 800px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 40px;
+            position: relative;
+            box-shadow: 0 0 30px var(--theme-glow);
+        }
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: transparent;
+            border: none;
+            color: var(--nura-gray);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        .modal-close:hover {
+            color: var(--theme-primary);
+        }
+        .modal-content h3 {
+            font-size: 2rem;
+            color: var(--theme-primary);
+            margin-bottom: 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+        }
+        .modal-content p {
+            color: var(--nura-gray);
+            margin-bottom: 15px;
+            font-size: 1rem;
+            line-height: 1.8;
         }
 
         .estrellas img {
